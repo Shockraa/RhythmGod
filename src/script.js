@@ -3,6 +3,7 @@ import './style.css';
 document.querySelector('.button2').addEventListener('click', comoJogar);
 document.querySelector('.button3').addEventListener('click', creditos);
 document.querySelector('.button4').addEventListener('click', retornar);
+document.querySelector('.button5').addEventListener('click', retornar);
     
     document.querySelector('.main1').style.display = 'flex';
     document.querySelector('.main2').style.display = 'none';
