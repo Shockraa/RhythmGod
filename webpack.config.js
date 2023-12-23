@@ -1,34 +1,33 @@
 const path = require('path');
 
 module.exports = {
-  mode: "development", // or "production"
-
+  mode: 'development', // ou 'production'
   entry: {
-    main: './src/index.js', // arquivo inicial
-    game: './src/game.js', // jogo
+    main: './src/script.js',
+    game: './src/game.js',
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
-
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
         use: {
-          loader: "babel-loader",
-        }
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
-
-  devtool: false, // for readability
-
+  devtool: 'source-map',
   devServer: {
     static: './dist',
+    port: 8080,
   },
 };
